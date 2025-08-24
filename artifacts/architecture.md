@@ -44,7 +44,7 @@ ros2 service call /get_location example_interfaces/srv/String "{data: 'toilet'}"
 **Response:**
 
 ```json
-{"label": "toilet", "x": 2.0, "y": -1.5, "theta": 0.0}
+{"label": "toilet", "x": 2.0, "y": 1.5, "theta": 0.0}
 ```
 
 This mock demonstrates the API design. In a real system, the JSON DB would be continuously updated by the robot's onboard camera + VLM.
@@ -125,7 +125,7 @@ ros2 run tb3_semantics semantic_mapper
 ros2 service call /get_location example_interfaces/srv/String "{data: 'toilet'}"
 
 # Run planner towards that goal
-ros2 run tb3_rrt_planner rrt_planner --ros-args -p map_yaml:=maps_demo/office.yaml -p goal:="[2.0, -1.5, 0.0]"
+ros2 run tb3_rrt_planner rrt_planner --ros-args -p map_yaml:=maps_demo/office.yaml -p goal:="[2.0, 1.5, 0.0]"
 ```
 
 ---
