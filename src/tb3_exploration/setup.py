@@ -19,15 +19,10 @@ setup(
             'rviz/tb3_mapping.rviz',            # <- install the RViz config
         ]),
     ],
-    install_requires=['setuptools'],
-    zip_safe=True,
+    #install_requires=['setuptools'], #Not required
+    zip_safe=True,  # optional
     maintainer='Yashashwani Kashyap',
     maintainer_email='kashyapyashashwani@gmail.com',
     description='SLAM + Nav2 launch and configs for TurtleBot3',
     license='MIT',
-    entry_points={
-        'console_scripts': [
-            # no console scripts for this package
-        ],
-    },
 )
