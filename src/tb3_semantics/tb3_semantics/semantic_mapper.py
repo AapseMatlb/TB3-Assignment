@@ -3,8 +3,13 @@ import json
 import rclpy
 from rclpy.node import Node
 from example_interfaces.srv import String
+from ament_index_python.packages import get_package_share_directory
 
-DEFAULT_JSON = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'artifacts', 'semantic_mock.json')
+DEFAULT_JSON = os.path.join(
+    get_package_share_directory('tb3_semantics'),
+    'artifacts',
+    'semantic_mock.json'
+)
 
 class SemanticMapper(Node):
     def __init__(self):
