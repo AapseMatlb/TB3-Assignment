@@ -31,7 +31,7 @@ Later, a user can ask “Where is the toilet?” and the robot should return a *
   - With depth (or geometric heuristics), back-project the region to a 3D point in `camera_link`, then transform to **map** via TF to get `(x, y, θ)`.
 - **This repo (mock for assignment):**
   - We simulate the detector/VLM and **directly store** a few labels in a JSON DB:
-    - `artifacts/semantic_mock.json` → `{"toilet":[2.0,-1.5,0.0], "pantry":[4.2,0.8,1.57], ...}`
+    - `artifacts/semantic_mock.json` → `{"toilet":[2.0,1.5,0.0], "pantry":[4.2,0.8,1.57], ...}`
 
 > The brief allows simulating VLM outputs, as long as the **architecture** and **data handling** are clearly described. We do both.
 
@@ -50,7 +50,7 @@ Later, a user can ask “Where is the toilet?” and the robot should return a *
   ```json
   {
     "toilet": [
-      {"id":"toilet-1","x":2.00,"y":-1.50,"theta":0.00,"conf":0.86,"last_seen":"2025-08-01T12:34:56Z"},
+      {"id":"toilet-1","x":2.00,"y":1.50,"theta":0.00,"conf":0.86,"last_seen":"2025-08-01T12:34:56Z"},
       {"id":"toilet-2","x":9.40,"y": 3.10,"theta":1.57,"conf":0.78,"last_seen":"2025-08-02T09:10:00Z"}
     ],
     "pantry": [
@@ -68,7 +68,7 @@ Later, a user can ask “Where is the toilet?” and the robot should return a *
 - **API (in repo):** ROS 2 service `/get_location` (type: `example_interfaces/srv/String`).
   - **Input:** any text label, e.g., `"toilet"` (not hard-coded).
   - **Output:** JSON string with a pose or an error, e.g.  
-    `{"label":"toilet","x":2.0,"y":-1.5,"theta":0.0}`  
+    `{"label":"toilet","x":2.0,"y":1.5,"theta":0.0}`  
     (Node: `src/tb3_semantics/semantic_mapper.py`)
 - **Behavior:**
   - Normalizes the text (lowercase).
@@ -118,10 +118,10 @@ ros2 run tb3_semantics semantic_mapper
 
 # 3) Ask a question (free text)
 ros2 service call /get_location example_interfaces/srv/String "{data: 'toilet'}"
-# → {"label":"toilet","x":2.0,"y":-1.5,"theta":0.0}
+# → {"label":"toilet","x":2.0,"y":1.5,"theta":0.0}
 
 # 4) Plan to that location
-ros2 run tb3_rrt_planner rrt_planner --ros-args   -p map_yaml:=maps_demo/office.yaml   -p goal:="[2.0, -1.5, 0.0]"
+ros2 run tb3_rrt_planner rrt_planner --ros-args   -p map_yaml:=maps_demo/office.yaml   -p goal:="[2.0, 1.5, 0.0]"
 ```
 
 ---
