@@ -1,0 +1,58 @@
+Panels:
+  - Class: rviz/Displays
+    Name: Displays
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Name: Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+  - Class: rviz/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+  Displays:
+    - Class: rviz/TF
+      Enabled: true
+      Name: TF
+      Show Arrows: true
+      Show Names: false
+      Show Axes: false
+      Show Tree: false
+    - Class: rviz/Map
+      Enabled: true
+      Name: Map
+      Topic: /map
+      Alpha: 1
+    - Class: rviz/Path
+      Enabled: true
+      Name: Plan
+      Topic: /plan
+      Buffer Length: 1
+      Line Style: Lines
+      Line Width: 0.05
+      Color: 25; 255; 240
+  Tools:
+    - Class: rviz/Interact
+    - Class: rviz/MoveCamera
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+  Views:
+    Current:
+      Class: rviz/TopDownOrtho
+      Angle: 0
+      Scale: 50
+      X: 0
+      Y: 0
+      Near Clip Distance: 0.01
+      Target Frame: map
+      Value: TopDownOrtho (Map)
