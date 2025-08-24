@@ -4,14 +4,14 @@ package_name = 'tb3_semantics'
 setup(
     name=package_name,
     version='0.0.1',
-    packages=[package_name],
+    packages=['tb3_semantics'],
     data_files=[
     ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
     ('share/' + package_name, ['package.xml']),
     ('share/' + package_name + '/artifacts', ['artifacts/semantic_mock.json']),
     ]
     
-    install_requires=['setuptools'],
+    #install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Yashashwani Kashyap',
     maintainer_email='kashyapyashashwani@gmail.com',
