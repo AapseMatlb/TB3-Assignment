@@ -30,21 +30,23 @@ ros2 run tb3_semantics semantic_mapper
 ros2 service call /get_location example_interfaces/srv/String "{data: 'toilet'}"
 
 # RRT planner (publishes nav_msgs/Path on /plan)
-ros2 run tb3_rrt_planner rrt_planner --ros-args   -p map_yaml:=maps_demo/office.yaml   -p start:="[0.5,0.5,0.0]"   -p goal:="[8.0,8.0,0.0]"   -p goal_bias:=0.05 -p step_size:=5 -p max_iters:=5000 -p inflate_radius:=2
+ros2 run tb3_rrt_planner rrt_planner --ros-args   -p map_yaml:=maps_demo/office.yaml   -p start:="[0.5,0.5,0.0]"   -p goal:="[2.0,1.5,0.0]"   -p goal_bias:=0.05 -p step_size:=5 -p max_iters:=5000 -p inflate_radius:=2
 ```
 
 Open RViz and visualize `/map` (OccupancyGrid) and `/plan` (Path).
 
 ## Offline Proof (No ROS Needed – Works on Windows)
 ```bash
-python scripts/demo_rrt_local.py --map maps_demo/office.yaml --start 0.5 0.5 --goal 8 8
+python scripts/demo_rrt_local.py --map maps_demo/office.yaml --start 0.5 0.5 --goal 2.0 1.5
 python scripts/demo_semantic_query.py --label toilet
 ```
 Artifacts saved in `artifacts/`:
 - `occupancy_grid_preview.png`
 - `rrt_path_example.png`
 - `semantic_queries_demo.txt`
-- `architecture.pdf`
+- `architecture.md`
+- `semantic_architecture`
+- `test_case_semantic_nav`
 
 ## Notes
 - The map uses origin `[0,0,0]` and resolution `0.05 m/pixel` for simplicity.
