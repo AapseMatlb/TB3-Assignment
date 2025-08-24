@@ -3,13 +3,25 @@
   <name>tb3_exploration</name>
   <version>0.0.1</version>
   <description>SLAM + Nav2 launch and configs for TurtleBot3</description>
+
   <maintainer email="kashyapyashashwani@gmail.com">Yashashwani Kashyap</maintainer>
   <license>MIT</license>
+
   <buildtool_depend>ament_python</buildtool_depend>
-  <exec_depend>rclpy</exec_depend>
+
+  <!-- Launch-time/runtime deps used by the launch files -->
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+
+  <!-- Stack deps -->
   <exec_depend>slam_toolbox</exec_depend>
   <exec_depend>nav2_map_server</exec_depend>
   <exec_depend>nav2_bringup</exec_depend>
+
+  <!-- (rclpy not required here since this pkg only ships launches/configs) -->
+
   <export>
     <build_type>ament_python</build_type>
   </export>
