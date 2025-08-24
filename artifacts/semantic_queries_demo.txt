@@ -1,8 +1,0 @@
-$ ros2 run tb3_semantics semantic_mapper
-# In another terminal:
-$ ros2 service call /get_location example_interfaces/srv/String "{data: 'toilet'}"
-response:
-  data: '{"label": "toilet", "x": 2.0, "y": -1.5, "theta": 0.0}'
-$ ros2 service call /get_location example_interfaces/srv/String "{data: 'pantry'}"
-response:
-  data: '{"label": "pantry", "x": 4.2, "y": 0.8, "theta": 1.57}'
