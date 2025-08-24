@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>tb3_semantics</name>
+  <version>0.0.1</version>
+  <description>Semantic tagging + query with mocked VLM outputs</description>
+  <maintainer email="kashyapyashashwani@gmail.com">Yashashwani Kashyap</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>example_interfaces</exec_depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
